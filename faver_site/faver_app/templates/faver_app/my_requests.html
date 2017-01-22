@@ -1,0 +1,68 @@
+{% extends "faver_app/base.html" %}
+
+
+{% block header %}
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static "faver_app/my_requests.css" %}">
+    <script src="{% static "faver_app/my_requests.js" %}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{% endblock %}
+
+{% block navbar-content %}
+
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="">Welcome, {{ username }}.</a></li>
+    <li><a href="/dashboard/">Explore</a></li>
+    <li><a href="/my-requests/">My requests</a></li>
+    <li><a href="/logout/">Log out</a></li>
+</ul>
+
+{% endblock %}
+
+{% block content %}
+    <div id="footer" class="row">
+
+        <div class="col-xs-3 no-padding">
+            <!-- blank -->
+        </div>
+        <div class="col-xs-3 no-padding">
+            <p class="max-height"> {{ username }} </p>
+        </div>
+        <div id="rep" class="col-xs-3 no-padding">
+            <span class="max-height"><img src="{% static "faver_app/crown.png" %}" height=80%>&nbsp{{ reputation }}</span>
+        </div>
+        <div id="coins" class="col-xs-3 no-padding">
+            <span class="max-height"><img src="{% static "faver_app/coins.png" %}" height=100%>&nbsp{{ coins }}</span>
+        </div>
+    </div>
+
+    <div id="profile">
+        <img src="http://s3.amazonaws.com/37assets/svn/765-default-avatar.png" height="13%" id="profile-image">
+    </div>
+
+    <div class="list-group">
+        {% for request in taken_requests %}
+            <div href="" class="list-group-item">
+                <h4 class="list-group-item-heading title">{{ request.title }}</h4>
+                <p class="list-group-item-text description">Description: {{ request.description }}</p>
+                <p class="list-group-item-text issuer">Issuer: {{ request.issuer.username }}</p>
+                <p class="list-group-item-text reward">Reward: {{ request.reward }}</p>
+                <p class="list-group-item-text status">Status: Taken</p>
+                {% csrf_token %}
+                <div class="award btn btn-default">Award</div>
+            </div>
+        {% endfor %}
+        {% for request in untaken_requests %}
+            <div href="" class="list-group-item">
+                <h4 class="list-group-item-heading">{{ request.title }}</h4>
+                <p class="list-group-item-text">Description: {{ request.description }}</p>
+                <p class="list-group-item-text">Issuer: {{ request.issuer.username }}</p>
+                <p class="list-group-item-text">Reward: {{ request.reward }}</p>
+                <p class="list-group-item-text">Status: Untaken</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

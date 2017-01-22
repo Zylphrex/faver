@@ -24,6 +24,10 @@ urlpatterns = [
     url(r'^login/$', faver_app.views.login_user),
     url(r'^logout/$', faver_app.views.logout_user),
     url(r'^register/$', faver_app.views.register_user),
-    url(r'^accounts/profile/$', faver_app.views.dashboard),
-    url(r'^request/$', faver_app.views.request),
+    url(r'^dashboard/$', faver_app.views.dashboard),
+    url(r'^post-request/$', faver_app.views.post_request),
+    url(r'^get-requests/$', faver_app.views.get_requests),
+    url(r'^accept-request/$', faver_app.views.accept_request),
+    url(r'^my-requests/$', faver_app.views.my_requests),
+    url(r'^complete-request/$', faver_app.views.complete_request),
 ]

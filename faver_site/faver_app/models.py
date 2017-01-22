@@ -12,6 +12,8 @@ class FaverRequest(models.Model):
     description = models.CharField(max_length=1024)
     issuer = models.ForeignKey('FaverUser', default=True)
     reward = models.IntegerField(default=10)
+    latitude = models.DecimalField(max_digits=6, decimal_places=3, default=43.663)
+    longitude = models.DecimalField(max_digits=6, decimal_places=3, default=-79.396)
 
 class FaverContract(models.Model):
     request = models.ForeignKey('FaverRequest', default=True, related_name='request')
