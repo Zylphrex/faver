@@ -1,5 +1,5 @@
 """
-WSGI config for faver project.
+WSGI config for faver_site project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "faver.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "faver_site.settings")
 
 application = get_wsgi_application()

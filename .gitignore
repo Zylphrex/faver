@@ -92,3 +92,5 @@ ENV/
 
 # Django
 faver/faver/settings.py
+
+*.DS_Store

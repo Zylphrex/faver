@@ -1,0 +1,69 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+    height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#footer {
+    height: 4%;
+    width: 100%;
+    position: absolute;
+    background-color: DDDDDD;
+    left: 0px;
+    bottom: 0px;
+    margin: 0;
+    padding: 0;
+}
+
+.no-padding {
+    padding: 0;
+    margin: 0;
+}
+
+.white {
+    background-color: white;
+}
+
+#profile {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 1%;
+}
+
+#profile-image {
+    border-radius: 50%;
+    background-color: white;
+}
+
+.max-height {
+    vertical-align: middle;
+}
+
+.fa {
+    color: #fff;
+}
+
+#request-btn {
+    position: absolute;
+    right: 0;
+    bottom: 8%;
+    width: 15%;
+    height: 6%;
+    background-color: orange;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align: center;
+}
